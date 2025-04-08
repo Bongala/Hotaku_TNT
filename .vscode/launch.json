@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-MangaApplication<manga>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.hotaku.manga.MangaApplication",
+      "projectName": "manga",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
