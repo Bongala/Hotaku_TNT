@@ -10,7 +10,7 @@ COPY src ./src
 RUN mvn package -DskipTests
 
 # Stage 2: Run
-FROM openjdk:25-jdk-17-bulleye
+FROM openjdk:25-ea-jdk-17-bulleye
 
 WORKDIR /app
 
