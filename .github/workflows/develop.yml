@@ -70,7 +70,7 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: 0966340602/hotaku-api:latest
+          tags: 0966340602/hotaku-api
 
       # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
       # - name: Update dependency graph
