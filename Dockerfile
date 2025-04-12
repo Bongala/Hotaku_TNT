@@ -1,5 +1,5 @@
 # Stage 1: Build
-FROM maven:3.8.6-openjdk-17 AS build
+FROM maven:eclipse-temurin-17 AS build
 
 WORKDIR /app
 
@@ -10,7 +10,7 @@ COPY src ./src
 RUN mvn package -DskipTests
 
 # Stage 2: Run
-FROM openjdk:17-jdk-alpine
+FROM openjdk:25-jdk-17-bulleye
 
 WORKDIR /app
 
