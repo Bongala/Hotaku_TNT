@@ -13,10 +13,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Build to analyze
+        run: mvn clean package 
+
       - name: Sonarless Scan
         uses: gitricko/sonarless@v1.2
         with:
           sonar-source-path: 'src'
+          sonar-project-key: ${{  github.run_id }}
           sonar-metrics-path: './sonar-mymetrics.json'
 
       - name: Check Sonar Metrics - No Vulnerabilities
