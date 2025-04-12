@@ -3,14 +3,8 @@ name: Hotaku
 on:
   pull_request:
     branches: [ develop ]
-    paths:
-      - 'src/**'
-      - '.github/workflows/app-workflow.yaml'
   push:
     branches: [ develop ]
-    paths:
-      - 'src/**'
-      - '.github/workflows/app-workflow.yaml'
 
 jobs:
   format-scan:
