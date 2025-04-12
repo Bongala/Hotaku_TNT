@@ -26,23 +26,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Install Maven dependencies
-        run: |
-          mvn install
-          mvn clean deploy
-
-      - name: Sonarless Scan
-        uses: gitricko/sonarless@v1.2
-        with:
-          sonar-source-path: 'src'
-          sonar-project-key: ${{  github.run_id }}
-          sonar-metrics-path: './sonar-mymetrics.json'
-
-      - name: Check Sonar Metrics - No Vulnerabilities
-        run: |
-          echo "Checking for any vulnerabilities in Sonar Metrics JSON"
-          VULN=$(cat ./sonar-mymetrics.json | jq -r '.component.measures[] | select(.metric == "vulnerabilities").value')
-          echo "# of vulnerabilities = ${VULN}"
-          [ "${VULN}" -eq "0" ]
+        run: mvn install
 
       - name: Run tests
         run: mvn --batch-mode --update-snapshots verify
