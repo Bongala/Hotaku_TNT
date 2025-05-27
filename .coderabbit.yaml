@@ -11,6 +11,8 @@ reviews:
   auto_review:
     enabled: true
     drafts: false
+    base_branch: 
+      - "develop"
   path_instructions:
     - path: "*"
       instructions: |
