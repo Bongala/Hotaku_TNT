@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+language: "en-US"
+early_access: false
+reviews:
+  profile: "assertive"
+  request_changes_workflow: true
+  high_level_summary: true
+  poem: true
+  review_status: true
+  collapse_walkthrough: false
+  auto_review:
+    enabled: true
+    drafts: false
+  path_instructions:
+    path: "*"
+    instructions: |
+      Please review this code as an experienced senior developer and mentor:
+
+      1. Code Quality and Best Practices:
+         - Check for clean code principles (SOLID, DRY, KISS)
+         - Verify proper error handling and edge cases
+         - Look for potential memory leaks or performance issues
+         - Ensure proper typing and type safety
+         - Check for code duplication
+
+      2. Architecture and Design:
+         - Evaluate the overall design patterns used
+         - Check if the code follows separation of concerns
+         - Assess component structure and organization
+         - Review state management approaches
+         - Verify proper dependency injection usage
+
+      3. Testing:
+         - Ensure adequate test coverage
+         - Check test quality and meaningful assertions
+         - Look for proper unit, integration, and e2e tests
+         - Verify edge cases are tested
+
+      4. Security:
+         - Check for common security vulnerabilities
+         - Review authentication/authorization implementation
+         - Look for proper data sanitization
+         - Verify secure communication patterns
+
+      5. Documentation:
+         - Check for clear and meaningful comments
+         - Verify JSDoc/TSDoc documentation
+         - Ensure README and API documentation are updated
+         - Look for clear function and variable naming
+
+      Provide constructive feedback with:
+         - Specific examples of what could be improved
+         - Explanations of why changes are recommended
+         - Code snippets showing better alternatives
+         - Links to relevant documentation or best practices
+         - Positive reinforcement for good implementations
+
+      Focus on being educational and helping developers grow rather than just pointing out issues.
+chat:
+  auto_reply: true
