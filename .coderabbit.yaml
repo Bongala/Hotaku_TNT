@@ -26,7 +26,7 @@ reviews:
           - Check if the code follows separation of concerns
           - Assess component structure and organization
           - Review state management approaches
-          - Verify proper dependency injection usage
+          - Verify proper dependency injection usage.
         3. Testing:
           - Ensure adequate test coverage
           - Check test quality and meaningful assertions
