@@ -12,8 +12,8 @@ reviews:
     enabled: true
     drafts: false
   path_instructions:
-    path: "*"
-    instructions: |
+    - path: "*"
+      instructions: |
       Please review this code as an experienced senior developer and mentor:
 
       1. Code Quality and Best Practices:
