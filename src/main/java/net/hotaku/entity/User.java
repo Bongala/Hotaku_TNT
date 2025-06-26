@@ -42,26 +42,51 @@ public class User implements UserDetails {
     @Size(max = 120)
     private String password;
 
+    /**
+     * Returns an empty collection, indicating the user has no granted authorities.
+     *
+     * @return an empty list of granted authorities
+     */
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.emptyList();
     }
 
+    /**
+     * Indicates whether the user's account has not expired.
+     *
+     * @return always {@code true}, indicating the account is never expired
+     */
     @Override
     public boolean isAccountNonExpired() {
         return true;
     }
 
+    /**
+     * Indicates whether the user account is not locked.
+     *
+     * @return always true, indicating the account is never locked
+     */
     @Override
     public boolean isAccountNonLocked() {
         return true;
     }
 
+    /**
+     * Indicates whether the user's credentials are valid and have not expired.
+     *
+     * @return always returns true, indicating credentials are non-expired
+     */
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
     }
 
+    /**
+     * Indicates whether the user account is enabled.
+     *
+     * @return always true, indicating the user account is enabled
+     */
     @Override
     public boolean isEnabled() {
         return true;

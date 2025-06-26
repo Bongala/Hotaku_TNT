@@ -23,6 +23,14 @@ public class AuthService {
     private final JwtUtils jwtUtils;
     private final AuthenticationManager authenticationManager;
 
+    /**
+     * Registers a new user and returns an authentication response with a JWT token.
+     *
+     * Throws a RuntimeException if the username or email is already in use.
+     *
+     * @param request the signup request containing username, email, and password
+     * @return an AuthResponse with the generated JWT token, username, and email
+     */
     @Transactional
     public AuthResponse signup(SignupRequest request) {
         if (userRepository.existsByUsername(request.getUsername())) {
@@ -50,6 +58,12 @@ public class AuthService {
                 .build();
     }
 
+    /**
+     * Authenticates a user with the provided credentials and returns an authentication response containing a JWT token.
+     *
+     * @param request the sign-in request containing username and password
+     * @return an AuthResponse with the generated JWT token, username, and email of the authenticated user
+     */
     public AuthResponse signin(SigninRequest request) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
@@ -65,6 +79,11 @@ public class AuthService {
                 .build();
     }
 
+    /**
+     * Logs out the current user by clearing the security context.
+     *
+     * Removes authentication information from the security context, effectively ending the user's session.
+     */
     public void logout() {
         SecurityContextHolder.clearContext();
     }
